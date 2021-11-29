@@ -50,6 +50,8 @@ public class ProductRepository : IRepository<int, Product>
             Interlocked.Exchange(ref _currentId, await GetMaxIdAsync());
         }
 
+        // Since somebody can put Product with Id > _currentId, we loop until we can get available Id
+        // Usually we can get available Id on the first iteration
         while (true)
         {
             Interlocked.Increment(ref _currentId);
@@ -65,7 +67,7 @@ public class ProductRepository : IRepository<int, Product>
     {
         var max = await _connector.GetReaderAsync().OrderByDescending(x => x.Id).FirstOrDefaultAsync();
 
-        return max?.Id ?? 1;
+        return max?.Id ?? 0;
     }
 
     private async Task<bool> ValidateIdAsync(int? id)
