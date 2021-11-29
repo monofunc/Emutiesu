@@ -55,6 +55,7 @@ public class ProductsController : ControllerBase
     /// </summary>
     /// <param name="product">Product object</param>
     /// <response code="200">Created Product representation</response>
+    /// <response code="400">One or more validation error happened</response>
     [HttpPost]
     [ProducesResponseType(typeof(Product), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
