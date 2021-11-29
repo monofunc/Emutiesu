@@ -50,6 +50,20 @@ public class ProductsControllerTests
 
         Assert.IsType<NotFoundResult>(response.Result);
     }
+
+    [Fact]
+    public async Task ValidationErrorOnAddAsync()
+    {
+        var controller = new ProductsController(new TestProductService());
+
+        controller.ModelState.AddModelError("Error", "Bad Request");
+
+        var product = new Product { Id = 1 };
+
+        var response = await controller.CreateProductAsync(product);
+
+        Assert.IsType<BadRequestObjectResult>(response.Result);
+    }
 }
 
 public class TestProductService : IProductService
