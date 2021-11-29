@@ -22,7 +22,7 @@ public class ProductsController : ControllerBase
     /// <param name="search">Title or part of it to search</param>
     /// <response code="200">Collection of Products that satisfy expression</response>
     [ProducesResponseType(typeof(List<Product>), StatusCodes.Status200OK)]
-    [HttpGet]
+    [HttpGet("search")]
     public async Task<ActionResult<List<Product>>> FindProductsByTitleAsync(string search)
     {
         return await _productService.SearchAsync(search);
