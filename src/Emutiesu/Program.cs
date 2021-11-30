@@ -1,6 +1,6 @@
 using System.Reflection;
 using Emutiesu.Configurations;
-using Emutiesu.Connector;
+using Emutiesu.Connectors;
 using Emutiesu.Mappers;
 using Emutiesu.Models;
 using Emutiesu.Repositories;

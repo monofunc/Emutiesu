@@ -1,4 +1,4 @@
-﻿namespace Emutiesu.Connector;
+﻿namespace Emutiesu.Connectors;
 
 public interface IFileConnector<TEntity>
 {

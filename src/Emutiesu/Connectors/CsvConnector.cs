@@ -6,7 +6,7 @@ using Emutiesu.Mappers;
 using Microsoft.Extensions.Options;
 using Microsoft.VisualStudio.Threading;
 
-namespace Emutiesu.Connector;
+namespace Emutiesu.Connectors;
 
 public class CsvConnector<TEntity, TMap, TOptions> : IFileConnector<TEntity>
     where TMap : ClassMap<TEntity>

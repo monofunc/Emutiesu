@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Emutiesu.Connector;
+using Emutiesu.Connectors;
 using Emutiesu.Exceptions;
 using Emutiesu.Models;
 using Emutiesu.Repositories;
